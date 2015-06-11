@@ -11306,7 +11306,7 @@
       deepEqual(modded(5, 10), [10, 100]);
     });
 
-    test('should flatten transforms', 1, function() {
+    test('should flatten `transforms`', 1, function() {
       var modded = _.modArgs(fn, [doubled, square]);
       deepEqual(modded(5, 10), [10, 100]);
     });
@@ -11425,11 +11425,7 @@
       deepEqual(_.omit(object, 'a', 'c'), expected);
     });
 
-    test('should support picking an array of properties', 1, function() {
-      deepEqual(_.omit(object, ['a', 'c']), expected);
-    });
-
-    test('should support picking an array of properties and individual properties', 1, function() {
+    test('should flatten `props`', 1, function() {
       deepEqual(_.omit(object, ['a'], 'c'), expected);
     });
 
@@ -11466,7 +11462,7 @@
       delete stringProto.b;
     });
 
-    test('should work with a `predicate` argument', 1, function() {
+    test('should work with a predicate argument', 1, function() {
       var actual = _.omit(object, function(num) {
         return num != 2;
       });
@@ -11474,7 +11470,7 @@
       deepEqual(actual, expected);
     });
 
-    test('should provide the correct `predicate` arguments', 1, function() {
+    test('should provide the correct predicate arguments', 1, function() {
       var args,
           object = { 'a': 1, 'b': 2 },
           lastKey = _.keys(object).pop();
@@ -12160,11 +12156,7 @@
       deepEqual(_.pick(object, 'a', 'c'), expected);
     });
 
-    test('should support picking an array of properties', 1, function() {
-      deepEqual(_.pick(object, ['a', 'c']), expected);
-    });
-
-    test('should support picking an array of properties and individual properties', 1, function() {
+    test('should flatten `props`', 1, function() {
       deepEqual(_.pick(object, ['a'], 'c'), expected);
     });
 
@@ -12193,7 +12185,7 @@
       deepEqual(_.pick('', 'slice'), { 'slice': ''.slice });
     });
 
-    test('should work with a `predicate` argument', 1, function() {
+    test('should work with a predicate argument', 1, function() {
       var actual = _.pick(object, function(num) {
         return num != 2;
       });
@@ -12201,7 +12193,7 @@
       deepEqual(actual, expected);
     });
 
-    test('should provide the correct `predicate` arguments', 1, function() {
+    test('should provide the correct predicate arguments', 1, function() {
       var args,
           object = { 'a': 1, 'b': 2 },
           lastKey = _.keys(object).pop();
